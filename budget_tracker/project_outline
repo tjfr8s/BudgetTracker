@@ -1,0 +1,13 @@
+
+program function:
+- read in .csv file of Mint transactions
+    - 9 categories
+    - use ifstream and getline()
+    - create class Transaction to contain transaction data and functions
+        - member variable for each relevant category
+        - 
+- sort transaction into category (food, entertainment, school...) based on
+keyword
+- calculate budget split for tyler and katie for each category
+- user inputs rent total for the month
+- calculates rent owed by tyler
