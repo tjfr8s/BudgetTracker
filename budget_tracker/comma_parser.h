@@ -1,4 +1,9 @@
-#pragma once
+#ifndef COMMA_PARSER_H
+#define COMMA_PARSER_H
+
+#include <vector>
+#include <iostream>
+#include <string>
 void commaParser(std::ifstream &csvIn, std::vector<std::string> &csvVect)
 {
     int quoteCount(0);
@@ -24,3 +29,5 @@ void commaParser(std::ifstream &csvIn, std::vector<std::string> &csvVect)
     }
     csvVect.push_back(temp);
 }
+
+#endif
