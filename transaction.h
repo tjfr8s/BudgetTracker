@@ -3,29 +3,31 @@
 
 #include <iostream>
 #include <fstream>
+#include <vector>
+
 class Transaction
 {
 private:
-    //int m_date;
+    std::string m_date;
     std::string m_description;
     std::string m_descriptionO;
-    //int m_amount;
+    std::string m_amount;
     std::string m_transType;
     std::string m_category;
     std::string m_accountName;
     std::string m_labels;
-    std::string m_notes;
+    // std::string m_notes;
 public:
-    Transaction(std::ifstream &transIn);
-    //void setDate(int date);
+    Transaction(std::vector<std::string> &csvVect);
+    void setDate(std::string date);
     void setDescription(std::string desc);
     void setDescriptionO(std::string descO);
-    //void setAmount(int amount);
+    void setAmount(std::string amount);
     void setTransType(std::string transType);
     void setCategory(std::string category);
     void setAccountName(std::string accountName);
     void setLabels(std::string labels);
-    void setNotes(std::string notes);
+    // void setNotes(std::string notes);
     void printTransaction();
 };
 
