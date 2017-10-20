@@ -4,7 +4,7 @@
 int main()
 {
     int number(7);
-    Properties::PropType type = Properties::DATE;
+    TransPropBase::PropType type = TransPropBase::DATE;
     TransProp<int> test(number, type);
     std::cout << test << std::endl;
 

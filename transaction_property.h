@@ -6,8 +6,10 @@ instead of have multiple member variables of different types
 #ifndef TRANSACTION_PROPERTY_H
 #define TRANSACTION_PROPERTY_H
 #include <iostream>
-namespace Properties
+
+class TransPropBase
 {
+public:
     enum PropType
     {
         DATE,
@@ -20,16 +22,16 @@ namespace Properties
         LABELS,
         MAX_PROP_TYPE
     };
-}
+};
 
 template<class T>
-class TransProp
+class TransProp: public TransPropBase
 {
 private:
     T m_prop;
-    Properties::PropType m_type;
+    PropType m_type;
 public:
-    TransProp(T prop, Properties::PropType type);
+    TransProp(T prop, PropType type);
     T getProp() {return m_prop;}
     friend std::ostream& operator<<(std::ostream& out, TransProp& prop)
     {
@@ -39,7 +41,7 @@ public:
 };
 
 template<class T>
-TransProp<T>::TransProp(T prop, Properties::PropType type): m_prop(prop), m_type(type)
+TransProp<T>::TransProp(T prop, PropType type): m_prop(prop), m_type(type)
 {
 
 }
